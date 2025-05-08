@@ -1,0 +1,84 @@
+Rust Hello World Exploration
+
+This project documents my initial experiments with Rust, including both manual compilation using `rustc` and setting up a basic project using Cargo.
+
+---
+
+Project Structure
+
+hello_world/
+├── main.rs           # Manual Rust file (compiled with rustc)
+└── test_cargo/       # Full Cargo project
+    ├── Cargo.toml
+    └── src/
+        └── main.rs
+
+---
+
+Manual Compilation Using rustc
+
+1. Wrote a basic `main.rs` with a `println!` statement.
+2. Compiled it using:
+
+   rustc main.rs
+
+3. Ran the output:
+
+   ./main
+
+Common Errors Faced:
+- Incorrect function syntax:
+  fn main()(
+  ✅ Fixed by changing to:
+  fn main() {
+
+- Used macro as a function:
+  println("Hello World");
+  ✅ Fixed by using:
+  println!("Hello World");
+
+---
+
+Using Cargo
+
+1. Attempted to use Cargo in a folder without a `Cargo.toml`:
+
+   cargo run
+   # Error: could not find `Cargo.toml`
+
+2. Created a new Cargo project:
+
+   cargo new test_cargo
+   cd test_cargo
+
+3. Ran the project:
+
+   cargo run
+   # Output: Hello, world!
+
+---
+
+Summary
+
+| Task                   | Tool Used | Status        |
+|------------------------|-----------|---------------|
+| Manual Compilation     | rustc     | ✅ Successful  |
+| Cargo Project Creation | cargo     | ✅ Successful  |
+| Running with Cargo     | cargo run | ✅ Successful  |
+| Syntax Fixes           | Rust Code | ✅ Corrected   |
+
+---
+
+Key Learnings
+
+- Use `!` with Rust macros like `println!`.
+- `rustc` is good for single files; use `cargo` for project management.
+- `Cargo.toml` is essential for running with `cargo`.
+
+---
+
+Next Steps
+
+- Explore unit testing with `cargo test`.
+- Add dependencies and learn `Cargo.toml` configuration.
+- Create and publish a crate.
